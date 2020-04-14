@@ -325,7 +325,7 @@ show_key(int key, int offset, void *Data, int DataSize)
 	int option_delete = NOSEL, option_delete_w_auth = NOSEL,
 		option_save = NOSEL;
 
-	if (variable_is_setupmode() || key == KEY_MOK) {
+	if (variable_is_setupmode() || keyinfo[key].authenticated == 0) {
 		option_delete = o;
 		options[o++] = L"Delete";
 	}
